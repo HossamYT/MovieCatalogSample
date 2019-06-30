@@ -14,6 +14,8 @@ import edu.study.movieinfoservice.model.Movie;
 @RequestMapping("/movie")
 public class MovieController {
 	
+	// Here we can also use @RequestParam but the URL will be different movie_id?=111
+	// but since we are requesting a resource it should be @PathVariable 
 	@RequestMapping("/{movie_id}")
 	public Movie getMovieInfo(@PathVariable("movie_id") String movieId) {
 		return new Movie(movieId, "Meet The Fockers", "Comedy , Family");
